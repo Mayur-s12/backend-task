@@ -1,6 +1,6 @@
 GET http://localhost:3000/transactions/?search_q=&page=1&month=
 
-###
+### 
 
 GET http://localhost:3000/statistics/?month=
 

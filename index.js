@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require("express")
 const app=express()
 
@@ -6,7 +7,8 @@ const {open}=require("sqlite")
 const sqlite3=require("sqlite3")
 const path=require("path")
 const { off } = require("process")
-const dbPath=path.join(__dirname,"myTransaction.db")
+const dbPath=process.env.DB_PATH
+console.log(dbPath)
 
 app.use(express.json())
 
@@ -18,9 +20,10 @@ const initializeDbAndServer=async()=>{
             driver:sqlite3.Database
         })
 
-        app.listen(3000,()=>{
-            console.log("Server is running at port 3000")
-        })
+        const PORT = process.env.PORT || 3000; // 
+        app.listen(PORT, () => {
+        console.log(`Server is running at port ${PORT}`);
+    });
     }
     catch(e){
         console.log(`Db error: ${e.message}`)
