@@ -1,0 +1,19 @@
+GET http://localhost:3000/transactions/?search_q=&page=1&month=
+
+###
+
+GET http://localhost:3000/statistics/?month=
+
+###
+
+GET http://localhost:3000/barchart/?month=
+
+###
+
+GET http://localhost:3000/unique-items/?month=
+
+### 
+
+GET http://localhost:3000/combined-data/?search_q=men&page=1&month=05
+
+###
