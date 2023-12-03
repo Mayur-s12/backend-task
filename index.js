@@ -1,16 +1,19 @@
 require('dotenv').config();
 const express=require("express")
 const app=express()
+const cors = require('cors');
 
 const axios = require('axios')
 const {open}=require("sqlite")
 const sqlite3=require("sqlite3")
 const path=require("path")
-const { off } = require("process")
+
 const dbPath=process.env.DB_PATH
 console.log(dbPath)
 
 app.use(express.json())
+
+app.use(cors());
 
 let db;
 const initializeDbAndServer=async()=>{
